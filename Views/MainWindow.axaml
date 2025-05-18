@@ -8,12 +8,12 @@
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="FamilyTreeApp"
-        Width="500" Height="300">
+        Width="1920" Height="1080">
 
     <Window.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+        <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
             <GradientStop Color="#0d0f0f" Offset="0" />
-            <GradientStop Color="#0d0f0f" Offset="1" />
+            <GradientStop Color="#1d1d24" Offset="1" />
         </LinearGradientBrush>
     </Window.Background>
 
