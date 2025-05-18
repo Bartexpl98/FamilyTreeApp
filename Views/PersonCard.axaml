@@ -1,0 +1,14 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:models="clr-namespace:FamilyTreeApp.Models"
+             x:Class="FamilyTreeApp.Views.PersonCard"
+             x:DataType="models:Person">
+
+    <Border CornerRadius="8" Background="#302f40" Padding="20" BorderBrush="#0e0e14" BorderThickness="1">
+        <StackPanel>
+            <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16"/>
+            <TextBlock Text="{Binding DateOfBirth, StringFormat='DOB: {0:yyyy-MM-dd}'}" FontSize="14" />
+            <TextBlock Text="{Binding Age}" FontSize="14"/>
+        </StackPanel>
+    </Border>
+</UserControl>

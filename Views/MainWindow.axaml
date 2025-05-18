@@ -3,6 +3,8 @@
         xmlns:vm="clr-namespace:FamilyTreeApp.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:FamilyTreeApp.Views"
+
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="FamilyTreeApp.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -21,19 +23,9 @@
         <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <Border BorderThickness="2"
-            BorderBrush="#0e0e14"
-            Background="#14131f"
-            Padding="20"
-            CornerRadius="12"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center" >
-        <StackPanel Spacing="10">
-            <TextBlock Text="{Binding John.Name}" FontSize="26" FontWeight="Bold" Foreground="#d3d3e0" />
-            <TextBlock Text="{Binding John.DateOfBirth, StringFormat='DOB: {0:yyyy-MM-dd}'}" FontSize="18" />
-            <TextBlock Text="{Binding John.Age}" FontSize="18" />
-        </StackPanel>
-    </Border>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <views:PersonCard DataContext="{Binding Gary}" />
+    </StackPanel>
 
 </Window>
 
