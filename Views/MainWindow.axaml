@@ -1,20 +1,39 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:FamilyTreeApp.ViewModels"
+        xmlns:vm="clr-namespace:FamilyTreeApp.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="FamilyTreeApp.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="FamilyTreeApp">
+        Title="FamilyTreeApp"
+        Width="500" Height="300">
+
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#0d0f0f" Offset="0" />
+            <GradientStop Color="#0d0f0f" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Background>
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Border BorderThickness="2"
+            BorderBrush="#0e0e14"
+            Background="#14131f"
+            Padding="20"
+            CornerRadius="12"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" >
+        <StackPanel Spacing="10">
+            <TextBlock Text="{Binding John.Name}" FontSize="26" FontWeight="Bold" Foreground="#d3d3e0" />
+            <TextBlock Text="{Binding John.DateOfBirth, StringFormat='DOB: {0:yyyy-MM-dd}'}" FontSize="18" />
+            <TextBlock Text="{Binding John.Age}" FontSize="18" />
+        </StackPanel>
+    </Border>
 
 </Window>
+

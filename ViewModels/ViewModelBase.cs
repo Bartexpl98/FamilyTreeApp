@@ -4,4 +4,5 @@ namespace FamilyTreeApp.ViewModels;
 
 public class ViewModelBase : ObservableObject
 {
+    
 }
